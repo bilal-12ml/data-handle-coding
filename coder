@@ -1,0 +1,35 @@
+#unique      unique_combine_master = combine_master.drop_duplicates().copy()
+
+#datetime format
+unique_combine_master = combine_master.drop_duplicates().copy()
+
+  #pivot table
+
+  grouped = unique_combine_master.pivot_table(values='a_party',index='subscription_date',columns='bundle_id',aggfunc= 'count',margins='true').reset_index()
+
+
+
+
+#concate function
+  
+  combine_master = pd.concat(dataframes, ignore_index=True)
+  
+  
+  #columns multiplication
+
+  for col in grouped.columns:
+    if col == 'subscription_date':
+        print(f"skipping {col}")
+        continue  # Skip the date column
+    elif col == '2':
+        print(f"reading {col} for 15")
+        grouped[col] *= 15  # Multiply column '2' by 15
+    else:
+        print(f"reading {col} for 10")
+        grouped[col] *= 10  # Multiply all other numeric columns by 10
+
+
+  
+
+
+  
