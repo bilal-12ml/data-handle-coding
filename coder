@@ -29,6 +29,11 @@ unique_combine_master = combine_master.drop_duplicates().copy()
         grouped[col] *= 10  # Multiply all other numeric columns by 10
 
 
+
+#sum of the column  when two or  the column are addded
+grouped['sum'] = grouped.apply(lambda x: x['1'] + x['2'], axis=1)
+
+
   
 
 
